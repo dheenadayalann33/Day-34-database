@@ -1,0 +1,94 @@
+create table student_Table(
+student_id int,
+primary key (student_id),
+student_name varchar(25),
+phone int,
+email varchar(25),
+batch varchar(25),
+qualifiction varchar(25),
+year_of_passing year,
+experience int,
+notice_period int,
+git_url varchar(100),
+task_id int,
+query_id int,
+mock_interview_id int,
+interview_task_id int,
+testimonial_id int,
+);
+
+
+create table taskTable (
+task_id int,
+primary key (task_id),
+task_name varchar(25),
+sub_on date,
+total_marks int,
+obtain_marks int,
+student_name varchar(25),
+student_id int,
+
+);
+
+create table  queryTable(
+query_id int,
+primary key (query_id),
+category varchar(25),
+title varchar(25),
+lang varchar(10),
+desp varchar(200),
+student_name varchar(25),
+student_id int,
+
+);
+
+create table mockInterviewTable (
+mock_interview_id int,
+primary key (mock_interview_id),
+comments varchar(250),
+interview_date datetime,
+score int,
+url varchar(50),
+student_name varchar(25),
+student_id int,
+
+);
+
+create table interviewTaskTable (
+interview_task_id int,
+primary key (interview_task_id),
+task_name varchar(25),
+sub_on date,
+total_marks int,
+obtain_marks int,
+student_name varchar(25),
+student_id int,
+
+);
+
+create table testimonialTable (
+testimonial_id int,
+primary key (testimonial_id),
+testimonial varchar(2500),
+sub_on date,
+student_name varchar(25),
+student_id int,
+
+);
+
+
+alter table  add foreign key (task_id) REFERENCES taskTable(task_id);
+alter table  add foreign key (query_id) REFERENCES queryTable(query_id);
+alter table  add foreign key (mock_interview_id) REFERENCES mockInterviewTable(mock_interview_id);
+alter table  add foreign key (interview_task_id) REFERENCES interviewTaskTable(interview_task_id);
+alter table  add foreign key (testimonial_id) REFERENCES testimonialTable(testimonial_id);
+
+alter table  add foreign key (student_id) REFERENCES studentTable(student_id);
+
+alter table  add foreign key (student_id) REFERENCES studentTable(student_id);
+
+alter table  add foreign key (student_id) REFERENCES studentTable(student_id);
+
+alter table  add foreign key (student_id) REFERENCES studentTable(student_id);
+
+alter table  add foreign key (student_id) REFERENCES studentTable(student_id);
